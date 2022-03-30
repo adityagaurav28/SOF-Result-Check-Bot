@@ -3,11 +3,11 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
 
+from webdriver_manager.chrome import ChromeDriverManager
+
 import pandas as pd
 
-#ChromeDriver Version - 89.0.4389.23
-#Chrome Version - 89.0.4389.90
-driver = webdriver.Chrome("C:\\Software\\chromedriver.exe")     #Replace it with your location of browser driver
+driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("http://results.sofworld.org/results")   #Opening the browser
 
 #For summarising the result
@@ -18,11 +18,11 @@ Award_Won = []
 
 #Olympiad for which you want to check
 #Should exactly match the dropdown menu option
-olympiad = 'SOF NSO 2020-21' 
+olympiad = 'SOF IMO 2021-22' 
 
 schoolCode = "GJ0637"   #Replace the school code for which you want to check
-standard = '08'     #Replace the standard for which you want to check
-rollNo = ['001','002','003','004','005','006','007','008','009','010']  #Replace the roll numbers of the students as a list 
+standard = '09'     #Replace the standard for which you want to check
+rollNo = ['001','002','003','004','005','006','007','008','009','010','011','012','013','014','015','016','017','018','019','020','021','022','023','024','025','026','027','028','029','030']  #Replace the roll numbers of the students as a list 
 
 for number in rollNo:   #Iterating through all the roll numbers
     startUrl = driver.current_url
